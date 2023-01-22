@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <title>GPT-3 Chatbot</title>
+    <style>
+      /* Add some basic styling for the chatbot */
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      #chatbot {
+        background-color: #f2f2f2;
+        padding: 20px;
+        border-radius: 10px;
+        width: 50%;
+        min-width: 300px;
+        box-shadow: 2px 2px 5px #ccc;
+      }
+
+      #input {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border-radius: 4px;
+        border: none;
+        font-size: 16px;
+      }
+
+      #submit {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      #responses {
+        margin-top: 20px;
+        padding: 12px;
+        border-radius: 4px;
+        background-color: #f2f5f7;
+        min-height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="chatbot">
+      <form>
+        <input id="input" type="text" placeholder="Enter your message here...">
+        <button id="submit" type="submit">Send</button>
+      </form>
+      <div id="responses"></div>
+    </div>
+  </body>
+</html>
