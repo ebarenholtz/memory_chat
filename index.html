@@ -58,5 +58,32 @@
       </form>
       <div id="responses"></div>
     </div>
-  </body>
-</html>
+    <script>
+    const apiKey = 'YOUR_API_KEY';
+    const inputField = document.querySelector('#input');
+    const submitButton = document.querySelector('#submit');
+    const responsesDiv = document.querySelector('#responses');
+
+    submitButton.addEventListener('click', (event) => {
+      event.preventDefault(); // prevent the form from submitting
+      const prompt = inputField.value;
+      inputField.value = ''; // clear the input field
+
+      // Make the API call to GPT-3
+      fetch(`https://api.openai.com/v1/engines/davinci/completions`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiKey}`
+        },
+        body: JSON.stringify({
+          prompt: prompt,
+          max_tokens: 2048,
+          temperature: 0.5
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
+        const response = data.choices[0].text;
+        // Display the response in the HTML
+        responsesDiv.
